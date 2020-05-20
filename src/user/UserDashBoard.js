@@ -10,11 +10,6 @@ const UserDashBoard = () => {
   const { user ,token} = isAuthenticated();
   const [data, setData] = useState([])
 
-
-  data.map((d) => {
-
-  })
-
   const myfunction = async () => {
     setData(await findOrderbyUserId(user._id,token))
   }
