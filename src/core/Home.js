@@ -7,13 +7,16 @@ import { getMyProducts } from "./helper/coreapicalls";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
+  const [load, setLoad] = useState(false);
 
   const loadAllProducts = () => {
+    setLoad(true);
     getMyProducts().then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
         setProducts(data);
+        setLoad(false);
       }
     });
   };
@@ -28,17 +31,25 @@ const Home = () => {
       description="Welcome to the Heaven Store for coders "
     >
       <h1 className="mb-4 text-center">Your Shoping Arena</h1>
-      <div className="row">
-        <div className="row ml-5">
-          {products.map((data, index) => {
-            return (
-              <div key={index} className="col-4 mb-4">
-                <Card product={data} />
-              </div>
-            );
-          })}
+      {!load ? (
+        <div className="row">
+          <div className="row ml-5">
+            {products.map((data, index) => {
+              return (
+                <div key={index} className="col-4 mb-4">
+                  <Card product={data} />
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div class="d-flex justify-content-center text-warning">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      )}
     </Base>
   );
 };

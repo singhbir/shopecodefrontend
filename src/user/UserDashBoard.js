@@ -20,7 +20,7 @@ const UserDashBoard = () => {
   
 
   return (
-    <Base title="User Page">
+    <Base title="User Page" description="Check Your Previous Orders">
       <div className="table-responsive">
       <table className="table table-striped  table-hover table-dark">
         <thead>
