@@ -86,11 +86,24 @@ const Menu = ({ history }) => {
             </span>
           </li>
         )}
-        <li className="navbar-brand ml-auto pt-1 pb-0">
-          <img src="https://www.onlinelogomaker.com/applet_userdata/version2/4/1/71554651/projects/71554651.png" alt="" className="nav-item" height="80%" onClick={()=>{history.push("/")}}/>
+        <li
+          className={
+            window.innerWidth < 630
+              ? "d-none"
+              : "navbar-brand ml-auto pt-1 pb-0"
+          }
+        >
+          <img
+            src="https://www.onlinelogomaker.com/applet_userdata/version2/4/1/71554651/projects/71554651.png"
+            alt=""
+            className="nav-item"
+            height="80%"
+            onClick={() => {
+              history.push("/");
+            }}
+          />
         </li>
       </ul>
-      
     </div>
   );
 };

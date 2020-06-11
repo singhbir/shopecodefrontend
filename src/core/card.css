@@ -2,4 +2,5 @@
   border-radius: 50px;
   background: linear-gradient(145deg, #2f343a, #383e44);
   box-shadow: 20px 20px 60px #252a2e, -20px -20px 60px #434a52;
+  overflow: hidden;
 }

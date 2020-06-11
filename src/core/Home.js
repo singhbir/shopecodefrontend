@@ -38,7 +38,7 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className="col-4 mb-4"
+                  className="col-md-6 col-sm-10 col-lg-4 mb-4"
                   data-aos="fade-up"
                   data-aos-easing="linear"
                   data-aos-duration="600"
