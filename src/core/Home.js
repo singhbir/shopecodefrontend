@@ -36,7 +36,13 @@ const Home = () => {
           <div className="row ml-5">
             {products.map((data, index) => {
               return (
-                <div key={index} className="col-4 mb-4">
+                <div
+                  key={index}
+                  className="col-4 mb-4"
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="600"
+                >
                   <Card product={data} />
                 </div>
               );

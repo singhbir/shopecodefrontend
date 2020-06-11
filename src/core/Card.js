@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
+import "./card.css";
 
 const Card = ({
   product,
@@ -57,19 +58,24 @@ const Card = ({
 
   return (
     <div
-      className="card text-white bg-dark  border border-light text-center"
-      style={{width:"80%"}}
+      className="card text-white bg-dark text-center mycard"
+      style={{ width: "80%" }}
     >
       <ImageHelper product={product} />
-      <div className="card-header lead bg-warning">{cardTitle}</div>
-      
+      <div className="card-header lead text-warning">{cardTitle}</div>
+
       <div className="card-body">
         {getARedirect(redirect)}
-        
-        <p className="lead bg-danger font-weight-normal text-wrap rounded ">
+
+        <p className="lead text-danger font-weight-normal text-wrap rounded ">
           {carddescription}
         </p>
-        <p className="btn rounded  btn-sm px-4 btn-block" style={{backgroundColor:"#66FCF1"}}>${cardprice}</p>
+        <p
+          className="btn rounded  btn-sm px-4 btn-block"
+          style={{ color: "#66FCF1" }}
+        >
+          ${cardprice}
+        </p>
         <div className="row">
           <div className="col-12">{showAddtoCart(addtoCart)}</div>
           <div className="col-12">{showRemoveFromCart(removefromCart)}</div>
