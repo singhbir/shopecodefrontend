@@ -8,6 +8,11 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
   const [load, setLoad] = useState(false);
+  const [w, sW] = useState(window.innerWidth);
+
+  window.addEventListener("resize", function () {
+    sW(window.innerWidth);
+  });
 
   const loadAllProducts = () => {
     setLoad(true);
@@ -33,7 +38,7 @@ const Home = () => {
       <h1 className="mb-4 text-center">Your Shoping Arena</h1>
       {!load ? (
         <div className="row">
-          <div className="row ml-5">
+          <div className={w > 629 ? "row ml-5" : "row"}>
             {products.map((data, index) => {
               return (
                 <div

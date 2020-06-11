@@ -57,10 +57,7 @@ const Card = ({
   };
 
   return (
-    <div
-      className="card text-white bg-dark text-center mycard"
-      style={{ width: "80%" }}
-    >
+    <div className="card text-white bg-dark text-center mycard">
       <ImageHelper product={product} />
       <div className="card-header lead text-warning">{cardTitle}</div>
 

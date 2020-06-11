@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/helper";
+import { useEffect } from "react";
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
@@ -11,6 +12,10 @@ const currentTab = (history, path) => {
 };
 
 const Menu = ({ history }) => {
+  const [wth, sWth] = useState(window.innerWidth);
+  window.addEventListener("resize", function () {
+    sWth(window.innerWidth);
+  });
   return (
     <div>
       <ul className="nav nav-tabs bg-dark">
@@ -86,16 +91,10 @@ const Menu = ({ history }) => {
             </span>
           </li>
         )}
-        <li
-          className={
-            window.innerWidth < 630
-              ? "d-none"
-              : "navbar-brand ml-auto pt-1 pb-0"
-          }
-        >
+        <li className={wth < 630 ? "d-none" : "navbar-brand ml-auto pt-1 pb-0"}>
           <img
             src="https://www.onlinelogomaker.com/applet_userdata/version2/4/1/71554651/projects/71554651.png"
-            alt=""
+            alt="logo"
             className="nav-item"
             height="80%"
             onClick={() => {

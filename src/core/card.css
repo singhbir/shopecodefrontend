@@ -3,4 +3,13 @@
   background: linear-gradient(145deg, #2f343a, #383e44);
   box-shadow: 20px 20px 60px #252a2e, -20px -20px 60px #434a52;
   overflow: hidden;
+  width: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+  .mycard {
+    border-radius: 20px;
+    width: 100%;
+    margin: 0 auto !important;
+  }
 }
